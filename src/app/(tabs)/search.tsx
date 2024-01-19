@@ -1,30 +1,64 @@
-import { StyleSheet } from 'react-native';
-import EditScreenInfo from '@/src/components/EditScreenInfo';
-import { Text, View } from '@/src/components/Themed';
+import { TextInput, FlatList, StyleSheet, SafeAreaView, StatusBar, TouchableOpacity } from "react-native";
+import { Text, View } from "@/src/components/Themed";
+import { tracks } from "@/assets/tracks";
+import TrackListItem from "@/src/components/TrackListItem";
+import { FontAwesome } from "@expo/vector-icons";
+import { useState } from "react";
 
-export default function TabTwoScreen() {
+export default function SearchScreen() {
+
+  const [search, setSearch] = useState("");
+  console.log(search);
+
+  const handleSearch = () => {
+    
+  }
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/two.tsx" />
+      <View style={styles.searchBar}>
+        <TouchableOpacity onPress={handleSearch}>
+          <FontAwesome name={"search"} color={"gray"} size={20} style={{ paddingHorizontal: 5 }} />
+        </TouchableOpacity>
+        <TextInput
+          style={[styles.searchInput, {}]}
+          placeholder="What do you want to listen to?"
+          placeholderTextColor={"gray"}
+          value={search}
+          onChangeText={(text) => setSearch(text)}
+        />
+        <TouchableOpacity onPress={() => setSearch("")}>
+          <Text style={{ color: 'gray', fontSize: 15, fontWeight: '300', paddingRight: 5 }}>Cancel</Text>
+        </TouchableOpacity>
+      </View>
+
+      <FlatList
+        data={tracks}
+        showsVerticalScrollIndicator={false}
+        renderItem={({ item }) => <TrackListItem track={item} />}
+      />
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: StatusBar.currentHeight ? StatusBar.currentHeight + 5 : 35,
+  },
+  searchBar: {
+    flexDirection: 'row',
+    backgroundColor: "#122425",
+    borderRadius: 10,
+    marginBottom: 5,
+    marginHorizontal: 7,
+    paddingHorizontal: 7,
+    paddingVertical: 5,
     alignItems: 'center',
-    justifyContent: 'center',
   },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
+  searchInput: {
+    flex: 1,
+    paddingHorizontal: 5,
+    fontSize: 16,
+    color: 'white'
+  }
 });
