@@ -23,3 +23,5 @@ export type Image = {
   height?: number;
   width?: number;
 };
+
+export default Track;
