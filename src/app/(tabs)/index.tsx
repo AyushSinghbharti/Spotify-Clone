@@ -14,7 +14,7 @@ export default function HomeScreen() {
         renderItem={({ item }) => <TrackListItem track={item} />}
       // ListFooterComponent={() => <Player />}
       />
-      <Player />
+      {/* <Player /> */}
     </View>
   )
 }
