@@ -1,14 +1,16 @@
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import Track from "../types";
+import { usePlayerContext } from "../provider/PlayerProvider";
 
 type TrackListItemProps = {
   track: Track;
 };
 
 export default function TrackListItem({ track }: TrackListItemProps) {
+  const {setTrack} = usePlayerContext();
   // console.log(track.album.images[0].url);
   return (
-    <View style={styles.container}>
+    <TouchableOpacity onPress={() => setTrack(track)} style={styles.container}>
       <Image
         source={{ uri: track.album.images[0]?.url }}
         style={styles.image}
@@ -17,23 +19,17 @@ export default function TrackListItem({ track }: TrackListItemProps) {
         <Text style={styles.title}>{track.name}</Text>
         <Text style={styles.subTitle}>{track.artists[0]?.name}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    // justifyContent: 'center',
-    // backgroundColor: 'gray',
-    // backgroundColor: 'red',
     marginVertical: 5,
     margin: 5,
     padding: 5,
     flexDirection: 'row',
     alignItems: 'center',
-    // width: '90%',
-    // paddingHorizontal: 5,
-    // flex: 1,
   },
   image: {
     aspectRatio: 1,
