@@ -7,18 +7,13 @@ import Player from "@/src/components/Player";
 export default function HomeScreen() {
   return (
     <View>
-
       <FlatList
         data={tracks}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => <TrackListItem track={item} />}
-      // ListFooterComponent={() => <Player />}
       />
-      {/* <Player /> */}
     </View>
-  )
+  );
 }
 
-const styles = StyleSheet.create({
-
-});
+const styles = StyleSheet.create({});

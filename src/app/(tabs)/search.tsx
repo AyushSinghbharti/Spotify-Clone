@@ -8,7 +8,6 @@ import { useState } from "react";
 export default function SearchScreen() {
 
   const [search, setSearch] = useState("");
-  console.log(search);
 
   const handleSearch = () => {
     
