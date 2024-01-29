@@ -18,13 +18,13 @@ export default function SearchScreen() {
         <TouchableOpacity onPress={handleSearch}>
           <FontAwesome name={"search"} color={"gray"} size={20} style={{ paddingHorizontal: 5 }} />
         </TouchableOpacity>
-        <TextInput
+        {/* <TextInput
           style={[styles.searchInput, {}]}
           placeholder="What do you want to listen to?"
           placeholderTextColor={"gray"}
           value={search}
           onChangeText={(text) => setSearch(text)}
-        />
+        /> */}
         <TouchableOpacity onPress={() => setSearch("")}>
           <Text style={{ color: 'gray', fontSize: 15, fontWeight: '300', paddingRight: 5 }}>Cancel</Text>
         </TouchableOpacity>
