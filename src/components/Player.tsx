@@ -19,7 +19,6 @@ const Player = () => {
     return sound
       ? () => {
           sound.unloadAsync();
-
         }
       : undefined;
   }, [sound]);
@@ -27,7 +26,6 @@ const Player = () => {
   const playTrack = async () => {
     if (sound) {
       await sound.unloadAsync();
-      
     }
     if (!track?.preview_url) {
       return;
@@ -51,8 +49,6 @@ const Player = () => {
     if (!status.isLoaded) {
       return;
     }
-    // console.log(status);
-    // console.log("status.playing: ", status.isPlaying);
     setIsPlaying(status.isPlaying);
   };
 
