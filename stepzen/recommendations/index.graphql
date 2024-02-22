@@ -96,14 +96,21 @@ type Recommendation {
 }
 
 type Query {
-  recommendations(seed_genres: String): Recommendation
+  _recommendations(seed_genres: String, access_token: String!): Recommendation
     @rest(
       endpoint: "https://api.spotify.com/v1/recommendations"
       headers: [
         {
           name: "authorization"
-          value: "Bearer BQAWPJfjgNhwGMIrKm-84_TzwSUiiVSZGe84Bl9THGSr6Ww2BrR-IGruig-s169_aOSAq8FC2SxCumDX4lUy1FtWoK8wtr2avr6pimtXhTIWqlJvoEQ"
+          value: "Bearer $access_token"
         }
+      ]
+    )
+  recommendations(seed_genres: String) : Recommendation
+    @sequence(
+    steps: [
+    {query: "getToken" },
+    {query: "_recommendations", arguments: [{name: "seed_genres", argument: "seed_genres"}]}
       ]
     )
 }
