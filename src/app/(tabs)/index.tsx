@@ -42,7 +42,7 @@ export default function HomeScreen() {
   }
 
   const tracks = data.recommendations?.tracks || [];
-  console.log(data.recommendations?.tracks);
+  // console.log(data.recommendations?.tracks);
 
   return (
     <View>
