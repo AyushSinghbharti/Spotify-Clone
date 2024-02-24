@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { tracks } from "@/assets/tracks";
+// import { tracks } from "@/assets/tracks";
 import { usePlayerContext } from "../provider/PlayerProvider";
 import { useEffect, useState } from "react";
 import { AVPlaybackStatus, Audio } from "expo-av";
@@ -10,6 +10,8 @@ const Player = () => {
   const [sound, setSound] = useState();
   const { track } = usePlayerContext();
   const [isPlaying, setIsPlaying] = useState(false);
+
+  console.log(track);
 
   useEffect(() => {
     playTrack();
