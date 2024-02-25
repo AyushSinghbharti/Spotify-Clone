@@ -85,23 +85,16 @@ type Query {
   _getTrack(trackId: String!, access_token: String!): TrackResponse
     @rest(
       endpoint: "https://api.spotify.com/v1/tracks/$trackId"
-      headers: [
-        {
-          name: "authorization"
-          value: "Bearer $access_token"
-        }
-      ]
+      headers: [{ name: "authorization", value: "Bearer $access_token" }]
     )
-
   getTrack(trackId: String!): TrackResponse
     @sequence(
       steps: [
-        {query: "getToken" }
+        { query: "getToken" }
         {
           query: "_getTrack"
-          arguments: [{name: "trackId", argument: "trackId"}]
+          arguments: [{ name: "trackId", argument: "trackId" }]
         }
       ]
     )
-
 }

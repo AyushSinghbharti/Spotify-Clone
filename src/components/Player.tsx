@@ -5,13 +5,66 @@ import { usePlayerContext } from "../provider/PlayerProvider";
 import { useEffect, useState } from "react";
 import { AVPlaybackStatus, Audio } from "expo-av";
 // const track = tracks[0];
+import { gql, useMutation, useQuery } from "@apollo/client";
+
+const insertfavoriateMutation = gql`
+  mutation MyMutation($trackid: String, $userid: String) {
+    insertFavorites(trackid: $trackid, userid: $userid) {
+      id
+      trackid
+      userid
+    }
+  }
+`;
+const isFavoriteQuery = gql`
+  query MyQuery($trackid: String!, $userid: String!) {
+    favoritesByTrackidAndUserid(trackid: $trackid, userid: $userid) {
+      id
+      trackid
+      userid
+    }
+  }
+`;
+
+const removeFavoriteQuery = gql`
+  mutation MyMutation($trackid: String!, $userid: String!) {
+    deleteFavorites(trackid: $trackid, userid: $userid) {
+      id
+      trackid
+      userid
+    }
+  }
+`;
 
 const Player = () => {
   const [sound, setSound] = useState();
   const { track } = usePlayerContext();
   const [isPlaying, setIsPlaying] = useState(false);
 
-  console.log(track);
+  const [insertFavorites] = useMutation(insertfavoriateMutation);
+  const [removeFavorite] = useMutation(removeFavoriteQuery);
+
+  const { data, refetch } = useQuery(isFavoriteQuery, {
+    variables: { userid: "vadim", trackid: track?.id || "" },
+  });
+
+  // console.log(data);
+  // console.log(data.favoritesByTrackidAndUserid)
+  const isLiked = data?.favoritesByTrackidAndUserid?.length > 0;
+
+  const onLike = async () => {
+    if (!track) return;
+    if (isLiked) {
+      await removeFavorite({
+        variables: { userid: "vadim", trackid: track.id },
+      });
+    } else {
+      await insertFavorites({
+        variables: { userid: "vadim", trackid: track.id },
+      });
+    }
+    refetch();
+  };
 
   useEffect(() => {
     playTrack();
@@ -77,16 +130,17 @@ const Player = () => {
         </View>
 
         <Ionicons
-          name={"heart-outline"}
-          size={20}
+          onPress={onLike}
+          name={isLiked ? "heart" : "heart-outline"}
+          size={25}
           color={"white"}
-          style={{ marginHorizontal: 10 }}
+          style={{ marginHorizontal: 15 }}
         />
         <Ionicons
           onPress={onPlayPause}
           disabled={!track?.preview_url}
           name={isPlaying ? "pause" : "play"}
-          size={22}
+          size={27}
           color={track?.preview_url ? "white" : "gray"}
         />
       </View>
