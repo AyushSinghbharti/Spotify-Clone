@@ -20,9 +20,10 @@ Welcome to the Music Playing App repository! This project is an Android applicat
 - **Expo**: A set of tools and services for building, deploying, and quickly iterating on native iOS, Android, and web applications.
 
 ## Overview
-![WhatsApp Image 2024-02-25 at 5 28 07 PM (1)](https://github.com/AyushSinghbharti/Spotify-Clone/assets/100284852/c1bddc56-c935-46fd-8238-db9b217d4572)
-![WhatsApp Image 2024-02-25 at 5 28 06 PM](https://github.com/AyushSinghbharti/Spotify-Clone/assets/100284852/2bdcfd5c-966e-4ebe-8c35-e6b7c4f71b56)
-![WhatsApp Image 2024-02-25 at 5 28 07 PM](https://github.com/AyushSinghbharti/Spotify-Clone/assets/100284852/0776919d-f035-4a86-9d5a-83dccc6d62a8)
+## Overview
+<img src="https://github.com/AyushSinghbharti/Spotify-Clone/assets/100284852/c1bddc56-c935-46fd-8238-db9b217d4572" alt="Overview Image 1" width="500" height="1800">
+<img src="https://github.com/AyushSinghbharti/Spotify-Clone/assets/100284852/2bdcfd5c-966e-4ebe-8c35-e6b7c4f71b56" alt="Overview Image 2" width="500" height="1800">
+<img src="https://github.com/AyushSinghbharti/Spotify-Clone/assets/100284852/0776919d-f035-4a86-9d5a-83dccc6d62a8" alt="Overview Image 3" width="500" height="1800">
 
 
 ## Getting Started
