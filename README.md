@@ -6,7 +6,6 @@ Welcome to the Music Playing App repository! This project is an Android applicat
 
 - Seamless music playback
 - Integration with Spotify API for accessing a vast library of songs
-- User authentication and authorization
 - Database storage using PostgreSQL
 - Easy-to-use interface built with React Native components
 - Utilization of StepZen for simplifying GraphQL API integration
@@ -27,13 +26,13 @@ To get the Music Playing App up and running on your local machine, follow these 
 1. **Clone the repository**:
 
    ```
-   git clone https://github.com/your-username/music-playing-app.git
+   git clone https://github.com/AyushSinghbharti/Spotify-Clone.git
    ```
 
 2. **Install dependencies**:
 
    ```
-   cd music-playing-app
+   cd Spotify-Clone
    npm install
    ```
 
