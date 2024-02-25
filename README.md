@@ -21,9 +21,9 @@ Welcome to the Music Playing App repository! This project is an Android applicat
 
 ## Overview
 ## Overview
-<img src="https://github.com/AyushSinghbharti/Spotify-Clone/assets/100284852/c1bddc56-c935-46fd-8238-db9b217d4572" alt="Overview Image 1" width=auto height="500">
 <img src="https://github.com/AyushSinghbharti/Spotify-Clone/assets/100284852/2bdcfd5c-966e-4ebe-8c35-e6b7c4f71b56" alt="Overview Image 2" width=auto height="500">
 <img src="https://github.com/AyushSinghbharti/Spotify-Clone/assets/100284852/0776919d-f035-4a86-9d5a-83dccc6d62a8" alt="Overview Image 3" width=auto height="500">
+<img src="https://github.com/AyushSinghbharti/Spotify-Clone/assets/100284852/c1bddc56-c935-46fd-8238-db9b217d4572" alt="Overview Image 1" width=auto height="500">
 
 
 ## Getting Started
