@@ -4,12 +4,12 @@ Welcome to the Music Playing App repository! This project is an Android applicat
 
 ## Features
 
-- Seamless music playback
-- Integration with Spotify API for accessing a vast library of songs
-- Database storage using PostgreSQL
-- Easy-to-use interface built with React Native components
-- Utilization of StepZen for simplifying GraphQL API integration
-- Expo for streamlined development and testing
+- Seamless music playback of 15 sec.
+- Integration with Spotify API for accessing a vast library of songs.
+- Database storage using PostgreSQL.
+- Easy-to-use interface built with React Native components/
+- Utilization of StepZen for simplifying GraphQL API integration.
+- Expo for streamlined development and testing.
 
 ## Technologies Used
 
@@ -18,6 +18,12 @@ Welcome to the Music Playing App repository! This project is an Android applicat
 - **Spotify API**: Integrates Spotify's extensive music catalog into the application, allowing users to search for and play their favorite songs.
 - **StepZen**: Simplifies GraphQL API integration, making it easier to fetch and manage data.
 - **Expo**: A set of tools and services for building, deploying, and quickly iterating on native iOS, Android, and web applications.
+
+## Overview
+![WhatsApp Image 2024-02-25 at 5 28 07 PM (1)](https://github.com/AyushSinghbharti/Spotify-Clone/assets/100284852/c1bddc56-c935-46fd-8238-db9b217d4572)
+![WhatsApp Image 2024-02-25 at 5 28 06 PM](https://github.com/AyushSinghbharti/Spotify-Clone/assets/100284852/2bdcfd5c-966e-4ebe-8c35-e6b7c4f71b56)
+![WhatsApp Image 2024-02-25 at 5 28 07 PM](https://github.com/AyushSinghbharti/Spotify-Clone/assets/100284852/0776919d-f035-4a86-9d5a-83dccc6d62a8)
+
 
 ## Getting Started
 
@@ -38,7 +44,7 @@ To get the Music Playing App up and running on your local machine, follow these 
 
 3. **Set up PostgreSQL database**:
 
-   - Ensure PostgreSQL is installed on your machine.
+   - Ensure PostgreSQL & Stepzen is installed on your machine.
    - Create a new database and configure the connection in the project's environment variables.
 
 4. **Configure Spotify API**:
@@ -54,8 +60,8 @@ To get the Music Playing App up and running on your local machine, follow these 
 
 6. **Open the application**:
 
-   - Scan the QR code using the Expo app on your Android device.
-   - Alternatively, use an Android emulator to run the application.
+   - Download the release version on your app
+   - Or Clone the repository and open it using expo dev
 
 ## Contributing
 
@@ -68,14 +74,5 @@ Contributions are welcome! If you'd like to contribute to the Music Playing App,
 5. Push your branch to your fork.
 6. Create a pull request with a clear description of your changes.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-Special thanks to the developers and maintainers of the libraries and tools used in this project, without which this application would not be possible.
-
----
-
-Thank you for your interest in the Music Playing App! If you have any questions, feedback, or issues, please don't hesitate to reach out. Happy listening! 🎵📱
+If you like to modify any functionality feel free to put a Pull Request.
+Thank you for your interest in the Music Playing App! Happy listening! 🎵📱
